@@ -1,0 +1,47 @@
+{
+  "name": "capper",
+  "version": "1.0.0",
+  "description": "A small Electron app to capture a WebRTC desktop stream and remotely control the desktop",
+  "main": "src/server/main.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack -p",
+    "dev": "NODE_ENV=development webpack --watch",
+    "test": "npm run test-main && npm run test-renderer",
+    "test-main": "NODE_ENV=TEST ./node_modules/.bin/electron-mocha test/main --timeout 3000",
+    "test-renderer": "NODE_ENV=TEST ./node_modules/.bin/electron-mocha --preload js/adapter.js --renderer --timeout 4000 --globals window test/renderer",
+    "flow": "./node_modules/.bin/flow",
+    "package": "./node_modules/.bin/electron-packager . --overwrite",
+    "start": "./node_modules/electron/dist/Electron.app/Contents/MacOS/Electron ."
+  },
+  "keywords": [
+    "Electron",
+    "webrtc",
+    "screen-capture"
+  ],
+  "author": "Ken Blasko",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "electron": "^1.8.4",
+    "electron-mocha": "^6.0.4",
+    "electron-packager": "^12.0.1",
+    "flow-bin": "^0.69.0",
+    "mock-socket": "^8.0.2",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "dependencies": {
+    "socket.io": "^2.1.0",
+    "socket.io-client": "^2.1.0",
+    "express": "^4.16.3",
+    "idx": "^2.2.0",
+    "dotenv": "^5.0.1",
+    "robotjs": "^0.5.1",
+    "vkey": "^1.0.1"
+  }
+}

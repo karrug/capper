@@ -1,0 +1,16 @@
+[ignore]
+.*/src/client/dist/.*
+
+[include]
+.*/src/.*
+
+[libs]
+./node_modules/fbjs/flow/lib
+
+[lints]
+
+[options]
+module.system.node.resolve_dirname=node_modules
+experimental.const_params=true
+
+[strict]
