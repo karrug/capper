@@ -17,4 +17,7 @@ npm install
 npm start
 ```
 
+Due to usage of [RobotJS](https://github.com/octalmage/robotjs), the machine must be running Node on NODE_MODULE_VERSION 57 (Nodejs 8.x.x).
+
 By default, the application will share the primary desktop screen ("Entire screen").  The app exposes a node server running on port `8888` via the host machine's IP.  Use another networked computer to access the host machine's URL via `<host-ip>:8888` in a browser window.  The host machine's desktop screen should be visible from the browser window and you can also control the machine.
+
